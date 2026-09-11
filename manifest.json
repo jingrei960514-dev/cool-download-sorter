@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "COOL Download Sorter",
+  "version": "0.1",
+  "permissions": ["downloads", "storage"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://cool.ntu.edu.tw/courses/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
