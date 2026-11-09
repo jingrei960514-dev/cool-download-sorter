@@ -1,15 +1,16 @@
 {
   "manifest_version": 3,
   "name": "COOL Download Sorter",
-  "version": "0.1",
+  "version": "0.2",
   "permissions": ["downloads", "storage"],
+  "host_permissions": ["https://cool.ntu.edu.tw/*"],
   "icons": {
     "16": "icons/icon16.png",
     "32": "icons/icon32.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "background": { "service_worker": "background.js" },
+  "background": { "service_worker": "background.js", "type": "module" },
   "content_scripts": [
     {
       "matches": ["https://cool.ntu.edu.tw/courses/*"],

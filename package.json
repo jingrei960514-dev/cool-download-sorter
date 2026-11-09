@@ -1,0 +1,8 @@
+{
+  "name": "cool-download-sorter",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}

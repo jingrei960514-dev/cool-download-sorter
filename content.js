@@ -13,7 +13,10 @@
   }
 
   function findCourseName() {
-    const links = document.querySelectorAll("#breadcrumbs a");
+    // 只取第一個 #breadcrumbs（頁面頂部真正的麵包屑），避免頁面內容偽造同 id 的元素
+    const crumbs = document.getElementById("breadcrumbs");
+    if (!crumbs) return null;
+    const links = crumbs.querySelectorAll("a");
     const re = new RegExp(`/courses/${courseId}(?:[/?#]|$)`);
     for (const a of links) {
       const href = a.getAttribute("href") || "";
